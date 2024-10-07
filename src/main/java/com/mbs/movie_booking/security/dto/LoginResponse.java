@@ -1,4 +1,4 @@
-package com.mbs.movie_booking.dto;
+package com.mbs.movie_booking.security.dto;
 
 
 public record LoginResponse( 

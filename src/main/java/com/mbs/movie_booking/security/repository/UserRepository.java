@@ -1,4 +1,4 @@
-package com.mbs.movie_booking.repository;
+package com.mbs.movie_booking.security.repository;
 
 import java.util.Optional;
 

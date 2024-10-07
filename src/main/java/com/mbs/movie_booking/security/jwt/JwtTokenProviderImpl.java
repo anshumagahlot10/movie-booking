@@ -1,4 +1,4 @@
-package com.mbs.movie_booking.jwt;
+package com.mbs.movie_booking.security.jwt;
 
 
 import java.security.Key;

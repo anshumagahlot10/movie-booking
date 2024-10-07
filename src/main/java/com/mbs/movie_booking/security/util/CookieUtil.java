@@ -1,4 +1,4 @@
-package com.mbs.movie_booking.util;
+package com.mbs.movie_booking.security.util;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpCookie;
@@ -29,9 +29,11 @@ public class CookieUtil {
                 .build();
     }
     public HttpCookie deleteAccessTokenCookie() {
+        
         return ResponseCookie.from(accessTokenCookieName, "").maxAge(0).httpOnly(true).path("/").build();
     }
     public HttpCookie deleteRefreshTokenCookie() {
+        
         return ResponseCookie.from(refreshTokenCookieName, "").maxAge(0).httpOnly(true).path("/").build();
     }
 

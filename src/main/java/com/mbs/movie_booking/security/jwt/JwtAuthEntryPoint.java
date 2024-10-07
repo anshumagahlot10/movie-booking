@@ -1,4 +1,4 @@
-package com.mbs.movie_booking.jwt;
+package com.mbs.movie_booking.security.jwt;
 
 import java.io.IOException;
 import java.time.LocalDateTime;

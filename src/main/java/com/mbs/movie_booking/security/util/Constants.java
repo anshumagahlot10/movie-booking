@@ -1,4 +1,4 @@
-package com.mbs.movie_booking.util;
+package com.mbs.movie_booking.security.util;
 
 public class Constants {
     public static final String TOKEN_HEADER = "Authorization";

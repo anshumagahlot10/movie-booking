@@ -1,4 +1,4 @@
-package com.mbs.movie_booking.jwt;
+package com.mbs.movie_booking.security.jwt;
 
 import java.io.IOException;
 
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import static com.mbs.movie_booking.util.Constants.TOKEN_HEADER;
-import static com.mbs.movie_booking.util.Constants.TOKEN_PREFIX;
+import static com.mbs.movie_booking.security.util.Constants.TOKEN_HEADER;
+import static com.mbs.movie_booking.security.util.Constants.TOKEN_PREFIX;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,12 +1,12 @@
-package com.mbs.movie_booking.jwt;
+package com.mbs.movie_booking.security.jwt;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.mbs.movie_booking.exception.ResourceNotFoundException;
-import com.mbs.movie_booking.repository.UserRepository;
+import com.mbs.movie_booking.security.exception.ResourceNotFoundException;
+import com.mbs.movie_booking.security.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 

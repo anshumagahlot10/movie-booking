@@ -1,4 +1,4 @@
-package com.mbs.movie_booking.config;
+package com.mbs.movie_booking.security.config;
 
 import java.util.Collections;
 
@@ -17,8 +17,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 
-import com.mbs.movie_booking.jwt.JwtAuthEntryPoint;
-import com.mbs.movie_booking.jwt.JwtAuthFilter;
+import com.mbs.movie_booking.security.jwt.JwtAuthEntryPoint;
+import com.mbs.movie_booking.security.jwt.JwtAuthFilter;
 
 import lombok.RequiredArgsConstructor;
 
@@ -57,8 +57,9 @@ public static final String SWAGGER_UI_URL = "/swagger-ui/**";
         http
                 .authorizeHttpRequests(authorize -> {
                     authorize.requestMatchers(ALLOWED_URLS).permitAll();
-                    authorize.requestMatchers("/api/auth/login").permitAll();
-                    authorize.requestMatchers("/api/auth/refresh").permitAll();
+                    authorize.requestMatchers("/api/auth/**").permitAll();
+                //     authorize.requestMatchers("/api/auth/refresh").permitAll();
+                //     authorize.requestMatchers("/api/auth/logout").permitAll();
                  
                     authorize.anyRequest().authenticated();
                 });

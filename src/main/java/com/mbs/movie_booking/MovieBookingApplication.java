@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.mbs.movie_booking.models.User;
-import com.mbs.movie_booking.repository.UserRepository;
+import com.mbs.movie_booking.security.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -65,4 +65,9 @@ public class MovieBookingApplication implements ApplicationRunner{
         userRepository.saveAll(List.of(user, admin, manager));
     }
 
+
+    // {
+    //     "username":"manager",
+    //     "password":"manager"
+    // }
 }
