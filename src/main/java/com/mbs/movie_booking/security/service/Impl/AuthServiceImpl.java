@@ -16,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import com.mbs.movie_booking.enums.TokenType;
 import com.mbs.movie_booking.models.Token;
 import com.mbs.movie_booking.models.User;
 import com.mbs.movie_booking.security.dto.LoginRequest;
@@ -141,16 +142,19 @@ public class AuthServiceImpl implements AuthService {
         String username = tokenProvider.getUsernameFromToken(refreshToken);
         User user = userRepository.findByUsername(username).orElseThrow(
                 () -> new ResourceNotFoundException("User not found"));
+        tokenRepository.deleteAccessTokenByUsername(username, TokenType.ACCESS); 
 
         Token newAccessToken = tokenProvider.generateAccessToken(
                 Map.of("role", "ROLE_USER"),
                 accessTokenDurationMinute,
                 ChronoUnit.MINUTES,
                 user);
-
+        newAccessToken.setUser(user);
+        tokenRepository.save(newAccessToken);
+        
         HttpHeaders responseHeaders = new HttpHeaders();
         addAccessTokenCookie(responseHeaders, newAccessToken);
-
+       
         LoginResponse loginResponse = new LoginResponse(true, "ROLE_USER");
         System.out.println("new access token:" + newAccessToken + "refresh token" + refreshToken);
 
