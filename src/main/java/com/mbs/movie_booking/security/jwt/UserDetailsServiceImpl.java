@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.mbs.movie_booking.security.exception.ResourceNotFoundException;
-import com.mbs.movie_booking.security.repository.UserRepository;
+import com.mbs.movie_booking.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 

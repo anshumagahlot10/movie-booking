@@ -24,8 +24,8 @@ import com.mbs.movie_booking.security.dto.LoginResponse;
 import com.mbs.movie_booking.security.exception.AppException;
 import com.mbs.movie_booking.security.exception.ResourceNotFoundException;
 import com.mbs.movie_booking.security.jwt.JwtTokenProvider;
-import com.mbs.movie_booking.security.repository.TokenRepository;
-import com.mbs.movie_booking.security.repository.UserRepository;
+import com.mbs.movie_booking.repository.TokenRepository;
+import com.mbs.movie_booking.repository.UserRepository;
 import com.mbs.movie_booking.security.service.AuthService;
 import com.mbs.movie_booking.security.util.CookieUtil;
 

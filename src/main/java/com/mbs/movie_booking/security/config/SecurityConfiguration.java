@@ -57,9 +57,10 @@ public static final String SWAGGER_UI_URL = "/swagger-ui/**";
         http
                 .authorizeHttpRequests(authorize -> {
                     authorize.requestMatchers(ALLOWED_URLS).permitAll();
-                    authorize.requestMatchers("/api/auth/**").permitAll();
-                //     authorize.requestMatchers("/api/auth/refresh").permitAll();
-                //     authorize.requestMatchers("/api/auth/logout").permitAll();
+                    authorize.requestMatchers("/api/auth/login").permitAll();
+                    authorize.requestMatchers("/api/**").permitAll();
+                    authorize.requestMatchers("/api/auth/refresh").permitAll();
+                    authorize.requestMatchers("/api/auth/logout").authenticated();
                  
                     authorize.anyRequest().authenticated();
                 });
